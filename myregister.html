@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Signup" content="0; url='http://127.0.0.1:5500/Yoga-Website/page.html'" />
+    <link rel="stylesheet" href="mystyle.css">
+    <title>Document</title>
+    <script type="text/javascript">
+      function showMessage() {
+          alert("You are registered successfully.");
+      }
+  </script>
+</head>
+<body>
+  <script type="text/javascript">var submitted=false;</script>
+    <div class="wrapper">
+        <header>Registration Form</header>
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdGrJ7TSlNA4dSD5cTh5rmcnTroFEzj48V1vl1XCeUisNQM4g/formResponse">
+          <form method="post" autocomplete="off" name="google-sheet"></form>
+            <div class="field name">
+                <div class="input-area">
+                  <input type="text" id="name" placeholder="Name" name="name" required>
+                  <i class="icon fas fa-envelope"></i>
+                  <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Name can't be blank</div>
+              </div>
+          <div class="field email">
+            <div class="input-area">
+              <input type="text" id="email" placeholder="Email Address" name="email"  required>
+              <i class="icon fas fa-envelope"></i>
+              <i class="error error-icon fas fa-exclamation-circle"></i>
+            </div>
+            <div class="error error-txt">Email can't be blank</div>
+          </div>
+          <div class="field password">
+            <div class="input-area">
+              <input type="password" id="psw" placeholder="Password" name="password" required >
+              <i class="icon fas fa-lock"></i>
+              <i class="error error-icon fas fa-exclamation-circle"></i>
+            </div>
+            <div class="error error-txt">Password can't be blank</div>
+          </div>
+          <div class="pass-txt"><a href="#">Forgot password?</a></div>
+          <input type="submit" id="submitBtn" onClick="showMessage()"/>  
+       <script>
+     document.getElementById("submitBtn").addEventListener("click", myFunction);  
+     function myFunction() {  
+       window.location.href="http://127.0.0.1:5500/Yoga-Website/page.html";
+     }  
+
+
+     const scriptURL = 'https://script.google.com/macros/s/AKfycbyCHa1ffhjr3nyCAfI02kpbUWBjuzUOFTh8a_qeZFQJ6ns80XC4RgurkEztUUT-fHvj/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+
+     
+    </script>
+        </form>
+        <p>Already a member?<a href="http://127.0.0.1:5500/Yoga-Website/mylogin.html">Login here</a></p>
+      </div>
+
+      <script>
+        function Login() {
+          window.location.href="http://127.0.0.1:5500/Yoga-Website/page.html"; 
+          
+        }
+
+
+           </script>
+      <script src="my.js"></script>
+    
+</body>
+</html>
